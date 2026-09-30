@@ -1,0 +1,118 @@
+/* ---------- Base layout ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6a7cff, #8f6aff);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  padding: 16px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 360px;
+  background: #1e1e2e;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Display ---------- */
+.display {
+  background: #14141f;
+  border-radius: 14px;
+  padding: 20px 16px;
+  margin-bottom: 20px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.display__history {
+  min-height: 20px;
+  color: #8b8ba7;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.display__current {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+/* ---------- Buttons grid ---------- */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 18px 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: #2b2b3d;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  background: #383850;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn--function {
+  background: #4a4a63;
+}
+
+.btn--function:hover {
+  background: #5a5a75;
+}
+
+.btn--operator {
+  background: #ff9f43;
+  color: #1e1e2e;
+}
+
+.btn--operator:hover {
+  background: #ffb26b;
+}
+
+.btn--equals {
+  background: #4caf50;
+  grid-column: span 1;
+}
+
+.btn--equals:hover {
+  background: #5fc463;
+}
+
+.btn--wide {
+  grid-column: span 2;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 400px) {
+  .btn {
+    padding: 16px 0;
+    font-size: 1.05rem;
+  }
+
+  .display__current {
+    font-size: 1.8rem;
+  }
+}
